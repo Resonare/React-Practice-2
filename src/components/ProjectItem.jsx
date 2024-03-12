@@ -1,9 +1,11 @@
-import { useState } from "react";
+const ProjectItem = ({ projectData, setStatus }) => {
+    const onOpenViewScreen = () => {
+        setStatus(`view:${projectData.id}`);
+    };
 
-const ProjectItem = ({ data }) => {
     return (
-        <li className="text-lg hover:bg-stone-900 py-3 px-3 w-11/12 cursor-pointer hover:text-stone-200 text-stone-400">
-            {data.title}
+        <li className="text-lg hover:bg-stone-900 py-3 px-3 w-11/12 cursor-pointer hover:text-stone-200 text-stone-400" onClick={onOpenViewScreen}>
+            {projectData.title}
         </li>
     );
 };

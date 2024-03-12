@@ -1,7 +1,11 @@
 import Button from "./Button";
 import ProjectList from "./ProjectList";
 
-const SideBar = ({ projectList, onOpenAdd }) => {
+const SideBar = ({ projectList, setStatus }) => {
+    const onOpenAddScreen = () => {
+        setStatus("add");
+    };
+
     return (
         <div className="flex text-orange-50 w-1/5 h-lvh">
             <div className="bg-stone-950 w-full mt-16 rounded-tr-3xl pt-32 px-10 ">
@@ -9,9 +13,9 @@ const SideBar = ({ projectList, onOpenAdd }) => {
                     Your Projects
                 </h1>
 
-                <Button onClick={onOpenAdd}>+ Add Project</Button>
+                <Button onClick={onOpenAddScreen}>+ Add Project</Button>
 
-                <ProjectList projectList={projectList} />
+                <ProjectList projectList={projectList} setStatus={setStatus} />
             </div>
         </div>
     );

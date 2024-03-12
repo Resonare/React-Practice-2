@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 
 const Input = forwardRef(({ type, id, children }, ref) => {
     const inputClasses =
-        "w-full bg-stone-200 rounded-sm border-b-4 border-stone-300 hover:border-stone-500 outline-none focus:border-stone-500 py-4 px-2 font-semibold text-xl text-stone-600 text-lg";
+        "w-full bg-stone-200 rounded-sm border-b-4 border-stone-300 hover:border-stone-500 outline-none focus:border-stone-500 py-4 px-2 font-semibold text-stone-600 text-lg";
 
     return (
         <div className="flex flex-col w-full my-6">

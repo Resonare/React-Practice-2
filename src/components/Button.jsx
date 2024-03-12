@@ -4,8 +4,8 @@ const Button = ({ type = "grey", className = "", children, ...otherProps }) => {
 
     if (type === "grey") {
         classes += " bg-stone-800 text-stone-400 hover:bg-stone-700";
-    } else if (type === "tranparent") {
-        classes += " bg-transparent no-underline hover:underline font-semibold";
+    } else if (type === "transparent") {
+        classes += " bg-transparent no-underline text-stone-900 hover:underline font-semibold";
     } else if (type === "black") {
         classes += " bg-stone-900 text-stone-100 hover:bg-stone-700 font-semibold";
     }

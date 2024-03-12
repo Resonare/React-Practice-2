@@ -1,11 +1,15 @@
 import { useState } from "react";
 import ProjectItem from "./ProjectItem";
 
-const ProjectList = ({ projectList }) => {
+const ProjectList = ({ projectList, setStatus }) => {
     return (
         <ul>
             {projectList.map((projectItem) => (
-                <ProjectItem key={projectItem.id} data={projectItem} />
+                <ProjectItem
+                    key={projectItem.id}
+                    projectData={projectItem}
+                    setStatus={setStatus}
+                />
             ))}
         </ul>
     );

@@ -2,7 +2,7 @@ import { useRef } from "react";
 import Button from "./Button";
 import Input from "./Input";
 
-const AddScreen = ({ onAdd, setStatus }) => {
+const AddScreen = ({ setStatus, projectList, setProjectList }) => {
     const titleRef = useRef();
     const descriptionRef = useRef();
     const dateRef = useRef();
@@ -11,11 +11,11 @@ const AddScreen = ({ onAdd, setStatus }) => {
         evt.preventDefault();
 
         const newProject = {
-            id: null,
+            id: projectList.length,
             title: titleRef.current.value,
             description: descriptionRef.current.value,
             date: dateRef.current.value,
-            listOfTasks: [],
+            taskList: [],
         };
 
         if (
@@ -27,8 +27,7 @@ const AddScreen = ({ onAdd, setStatus }) => {
             return;
         }
 
-        onAdd(newProject);
-
+        setProjectList((prevProjectList) => [...prevProjectList, newProject]);
         setStatus("idle");
     };
 
@@ -39,7 +38,7 @@ const AddScreen = ({ onAdd, setStatus }) => {
 
     return (
         <div className="flex w-4/5 justify-evenly items-center pl-32 pr-96">
-            <form className="w-full" onSubmit={onAdd}>
+            <form className="w-full" onSubmit={onSave}>
                 <div className="flex justify-end w-full">
                     <Button
                         className="mx-2 mb-1 px-9 py-3"

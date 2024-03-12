@@ -1,7 +1,11 @@
 import noProjectsImage from "../assets/no-projects.png";
 import Button from "./Button";
 
-const IdleScreen = ({ onOpenAdd }) => {
+const IdleScreen = ({ setStatus }) => {
+    const onOpenAddScreen = () => {
+        setStatus("add");
+    };
+
     return (
         <div className="flex w-4/5 justify-evenly items-center">
             <div className="flex flex-col items-center">
@@ -12,7 +16,7 @@ const IdleScreen = ({ onOpenAdd }) => {
                 <p className="text-3xl text-stone-400 mb-10">
                     Select a project or get started with a new one
                 </p>
-                <Button onClick={onOpenAdd}>Create new project</Button>
+                <Button onClick={onOpenAddScreen}>Create new project</Button>
             </div>
         </div>
     );
