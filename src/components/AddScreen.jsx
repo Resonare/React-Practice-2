@@ -18,6 +18,15 @@ const AddScreen = ({ onAdd, setStatus }) => {
             listOfTasks: [],
         };
 
+        if (
+            newProject.title == "" ||
+            newProject.description == "" ||
+            newProject.date == ""
+        ) {
+            alert("All fields must be filled!");
+            return;
+        }
+
         onAdd(newProject);
 
         setStatus("idle");

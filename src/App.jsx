@@ -42,11 +42,13 @@ Components:
 -Button (maybe exact button components needed) 1 +-
 -Project list 1 +
 -Project item 1 +
--Project unselected screen 2
--Project creation screen 3
--Project info screen 4
+-Project unselected screen 2 +
+-Project creation screen 3 +
+-Project info screen 4 +
 -Task manager 4
 -Task item 4
+
+Validation and error alerts needed
 
 
 */
